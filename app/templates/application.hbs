@@ -1,5 +1,7 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<ul>
+  {{#each model as |song|}}
+    <li>{{song.title}} by {{song.band}} ({{song.rating}})</li>
+{{/each}}
+</ul>
 
 {{outlet}}
