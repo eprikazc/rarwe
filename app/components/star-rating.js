@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   classNames: ['rating-panel'],
   rating: 0,
   maxRating: 5,
+  item: null,
 
   stars: Ember.computed('rating', 'maxRating', function() {
     var fullStars = this.starRange(1, this.get('rating'), 'full');
@@ -23,5 +24,10 @@ export default Ember.Component.extend({
       });
     }
     return starsData;
+  },
+  actions: {
+    setRating: function(newRating) {
+      this.get('item').set('rating', newRating);
+    },
   },
 });
