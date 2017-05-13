@@ -11,11 +11,11 @@
     {{star-rating rating=song.rating item=song on-click=(action "updateRating")}}
   </li>
   {{/each}}
-  {{#if noSongs}}
+  {{#unless canCreateSong}}
   <li class="list-group-item empty-list">
     <div class="empty-message">
       There are no songs yet. Why don't you <a href="#" {{action "enableSongCreation"}}>create one?</a>
     </div>
   </li>
-  {{/if}}
+  {{/unless}}
 </ul>
