@@ -1,7 +1,7 @@
 <ul class="list-group songs">
   <div class="list-group-item">
     {{input type="text" value=title class="new-song" placeholder="Add New Song"}}
-    <button class="btn btn-primary btn-sm new-song-button" {{action "createSong"}}>Add</button>
+    <button class="btn btn-primary btn-sm new-song-button" disabled={{isAddButtonDisabled}} {{action "createSong"}}>Add</button>
   </div>
   {{#each model.songs as |song|}}
   <li class="list-group-item song">
