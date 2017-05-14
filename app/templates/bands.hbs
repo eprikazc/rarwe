@@ -7,7 +7,7 @@
       </form>
     </div>
     {{#each model as |band|}}
-      {{#link-to 'bands.band.songs' band class="list-group-item band-link"}}
+      {{#link-to 'bands.band.index' band class="list-group-item band-link"}}
         {{band.name}}
         <span class="glyphicon pointer glyphicon-chevron-right"></span>
       {{/link-to}}
