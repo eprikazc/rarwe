@@ -2,9 +2,6 @@ import Ember from 'ember';
 import Song from '../../../models/band';
 
 export default Ember.Route.extend({
-  model: function() {
-    return this.modelFor('bands.band');
-  },
   resetController(controller) {
     controller.set('songCreationStarted', false);
   },
