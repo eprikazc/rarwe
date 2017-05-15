@@ -1,6 +1,4 @@
 import Ember from 'ember';
-import Band from '../models/band';
-import Song from '../models/song';
 
 
 export default Ember.Route.extend({
@@ -12,11 +10,13 @@ export default Ember.Route.extend({
       document.title = 'Bands - Rock & Roll';
     },
     createBand() {
-      let name = this.controller.get('name');
-      let band = Band.create({name: name});
-      this.modelFor('bands').pushObject(band);
-      this.controller.set('name', '');
-      this.transitionTo('bands.band.songs', band);
+      let band = this.store.createRecord('band', this.controller.getProperties('name'));
+      band.save()
+        .then(
+          () => {
+            this.controller.set('name', '');
+            this.transitionTo('bands.band.songs', band);
+          });
     },
   },
 });
