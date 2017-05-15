@@ -13,7 +13,11 @@ export default Ember.Controller.extend({
     updateRating(params) {
       let song = params.item,
         rating = params.rating;
+      if (rating === song.get('rating')) {
+        rating = 0;
+      }
       song.set('rating', rating);
+      song.save();
     },
     enableSongCreation() {
       this.set('songCreationStarted', true);

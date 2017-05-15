@@ -11,5 +11,8 @@ export default Ember.Route.extend({
         }
       }
     },
+    save() {
+      this.controller.model.save();
+    },
   }
 });
