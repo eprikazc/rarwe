@@ -45,6 +45,9 @@ export default Ember.Route.extend({
     return [ledZeppelin, pearlJam, fooFighters];
   },
   actions: {
+    didTransition() {
+      document.title = 'Bands - Rock & Roll';
+    },
     createBand() {
       let name = this.controller.get('name');
       let band = Band.create({name: name});

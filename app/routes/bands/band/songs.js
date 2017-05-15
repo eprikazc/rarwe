@@ -6,6 +6,10 @@ export default Ember.Route.extend({
     controller.set('songCreationStarted', false);
   },
   actions: {
+    didTransition() {
+      let band = this.modelFor('bands.band').get('name');
+      document.title = `${band} - songs`;
+    },
     createSong() {
       let band = this.controller.get('model');
       let title = this.controller.get('title');
