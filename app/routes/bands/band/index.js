@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  afterModel: function(model, transition) {
+  afterModel: function(model) {
     if (!Ember.isEmpty(model.get('description'))) {
       this.transitionTo('bands.band.details', model);
     } else {

@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     willTransition(transition) {
       if (this.controller.get('isEditing')) {
         if (window.confirm('You are editing. Are you sure?')) {
-          controller.set('isEditing', false);
+          this.controller.set('isEditing', false);
         } else {
           transition.abort();
         }
