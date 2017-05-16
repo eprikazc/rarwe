@@ -175,11 +175,10 @@ test('Create a new song in two steps', function(assert) {
       }, JSON.stringify(response)];
     });
   });
-  visit('/');
-  click('.band-link:contains("Radiohead")');
+  selectBand('Radiohead');
   click('a:contains("create one")');
   fillIn('.new-song', 'Killer Cars');
-  triggerEvent('.new-song-form', 'submit');
+  submit('.new-song-form');
   andThen(function() {
     assertElement(
       assert,

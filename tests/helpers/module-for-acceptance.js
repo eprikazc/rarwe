@@ -3,6 +3,7 @@ import Ember from 'ember';
 import startApp from '../helpers/start-app';
 import destroyApp from '../helpers/destroy-app';
 import './asserts';
+import './async-helpers';
 
 const { RSVP: { Promise } } = Ember;
 
